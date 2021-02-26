@@ -17,19 +17,19 @@ The types of logging available through the Azure App Service depends on the code
 
 ASP.NET apps only run on Windows app services, use the **System.Diagnostics.Trace** class.
 
-| Logging Level | System.Diagnostics.Trace  |
-| :---:   | :-: |
-| Error | Trace.TraceError("Message"); |
-| Warning | Trace.TraceWarning("Message"); |
-| Information | Trace.TraceInformation("Message"); |
-| Verbose | Trace.WriteLine("Message"); |
+Logging Level | System.Diagnostics.Trace  
+------------ | -------------
+Error | Trace.TraceError("Message");
+Warning | Trace.TraceWarning("Message");
+Information | Trace.TraceInformation("Message");
+Verbose | Trace.WriteLine("Message");
 
 ## ASP.NET Core apps
 
 ASP.NET Core apps can run on either Windows or Linux, use the **logger factory** class, and then use one of six-log levels:
 
 | Logging Level | ASP.NET Core apps Logger Factory  | ASP.NET |
-| :---:   | :-: |:-:|
+| ------------ | ------------ | ------------ |
 | 5 - Critical | logger.LogCritical("Message"); | Error |
 | 4 - Error | logger.LogError("Message"); | Error |
 | 3 - Warning | logger.LogWarning("Message"); | Warning |
@@ -41,14 +41,14 @@ ASP.NET Core apps can run on either Windows or Linux, use the **logger factory**
 
 on Windows or Linux, app logging is enabled using the **console()** method:
 
-- console.error("Message") - writes a message to STDERR
-- console.log("Message") - writes a message to STDOUT
+- console.error("Message") - writes a message to **STDERR**
+- console.log("Message") - writes a message to **STDOUT**
 
 Both types of message are written to the Azure app service **error-level** logs.
 
 ## Logging differences between Windows and Linux hosts
 
-### Windows apps:
+### Windows apps
 
 Windows apps benefit from a rich logging infrastructure because:
 
@@ -56,11 +56,11 @@ Windows apps benefit from a rich logging infrastructure because:
 - Messaging for ASP.NET apps is tightly integrated with the underlying IIS service (
 Azure Web apps use the Web server (IIS process)).
 
-### Other apps:
+### Other apps
 
 Logging options may be limited by the development platform, even when running on a Windows app service.
 
-### Linux-base script apps:
+### Linux-base script apps
 
 The logging functionality available to Linux-based scripted apps is determined by the Docker image used for the app's container.
 
@@ -91,6 +91,7 @@ Pros:
 - Providing the same set of rich telemetry and performance data whether the app is ASP.NET or Node
 
 Cons:
+
 - Have to include specific code within your app
 - Billable service
 
