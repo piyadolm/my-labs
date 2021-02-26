@@ -110,18 +110,22 @@ Cons:
 Logging to the file system will be **automatically reset to Off after 12 hours**.
 
 1. Navigate to your App Service in Azure Portal
-2. Navigate to Diagonistic blade
+2. Navigate to **App Service Logs** blade under Monitoring section
 3. Set **Application logging (Filesystem)** to **On**
 4. Set the **Level** to Error, Warning, Information, or Verbose.
+5. Click *Save*
 
 ### Send logging to Blob storage
 
 1. Navigate to your App Service in Azure Portal
-2. Navigate to Diagonistic blade
+2. Navigate to **App Service Logs** blade under Monitoring section
 3. Set **Application logging (Blob)** to **On**
-4. Select a storage account and container, **must be same region with Web app**
+4. Select a storage account, and container, **must be same region with Web app**
 5. Set the **Level** to Error, Warning, Information, or Verbose.
 6. Set **Retention Period**, because log to blob will never been delete.
+7. Click *Save*
+
+![Enable logging using Portal](../../Image/LP1/M1/enable-app-service-logging-using-portalV2.png)
 
 ## Enable logging using the Azure CLI
 
